@@ -567,7 +567,7 @@ function Stream(kurento, local, room, options) {
         video.autoplay = true;
         video.controls = false;
         if (wrStream) {
-        	video.src = URL.createObjectURL(wrStream);
+            video.srcObject = wrStream;
         	$(jq(thumbnailId)).show();
             hideSpinner();
         } else
@@ -797,7 +797,7 @@ function Stream(kurento, local, room, options) {
                 for (i = 0; i < videoElements.length; i++) {
                 	var thumbnailId = videoElements[i].thumb;
                 	var video = videoElements[i].video;
-                	video.src = URL.createObjectURL(wrStream);
+                   video.srcObject = wrStream;
                 	video.onplay = function() {
                     	//is ('native-video-' + that.getGlobalID())
                     	var elementId = this.id;
